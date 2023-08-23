@@ -1,5 +1,7 @@
 steps:
   - label: "Check Docker Registry"
     command: curl https://registry-1.docker.io/v2/ratelimitpreview/test/manifests/latest -I -XGET -6
+  - label: "check dns"
+    command: dig ANY +noall +answer registry.docker.io
   - label: "Download img"
     command: docker pull ubuntu:xenial
