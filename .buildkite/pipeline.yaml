@@ -5,3 +5,5 @@ steps:
     command: dig ANY +noall +answer registry.docker.io
   - label: "Download img"
     command: docker pull ubuntu:xenial
+  - label: "Download img ipv4"
+    command: echo "34.205.13.154 registry.docker.io >> /etc/hosts" && echo "34.205.13.154 registry-1.docker.io >> /etc/hosts" && docker pull ubuntu:xenial
